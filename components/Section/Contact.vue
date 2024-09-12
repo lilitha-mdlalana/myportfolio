@@ -19,7 +19,7 @@
       <div class="row">
 
 
-        <div class="item features-without-image col-12 col-md-6 col-lg-3 active">
+        <div class="item features-without-image col-12 col-md-6 col-lg-4">
           <div class="item-wrapper">
             <span class="mbr-iconfont m-auto socicon-linkedin socicon"
               style="color: rgb(0, 0, 0); fill: rgb(0, 0, 0);"></span>
@@ -30,7 +30,7 @@
             </div>
           </div>
         </div>
-        <div class="item features-without-image col-12 col-md-6 col-lg-3">
+        <div class="item features-without-image col-12 col-md-6 col-lg-4">
           <div class="item-wrapper">
             <span class="mbr-iconfont m-auto socicon-twitter socicon"
               style="color: rgb(0, 0, 0); fill: rgb(0, 0, 0);"></span>
@@ -42,19 +42,7 @@
             </div>
           </div>
         </div>
-        <div class="item features-without-image col-12 col-md-6 col-lg-3">
-          <div class="item-wrapper">
-            <span class="mbr-iconfont m-auto socicon-instagram socicon"
-              style="color: rgb(0, 0, 0); fill: rgb(0, 0, 0);"></span>
-            <div class="card-box">
-              <h4 class="card-title mbr-fonts-style mb-1 display-5"><strong>Instagram</strong></h4>
-              <h5 class="card-text mbr-fonts-style display-7">
-                <a href="#" class="text-success">@inno</a>
-              </h5>
-            </div>
-          </div>
-        </div>
-        <div class="item features-without-image col-12 col-md-6 col-lg-3">
+        <div class="item features-without-image col-12 col-md-6 col-lg-4">
           <div class="item-wrapper">
             <span class="mbr-iconfont m-auto socicon-github socicon"
               style="color: rgb(0, 0, 0); fill: rgb(0, 0, 0);"></span>
@@ -69,5 +57,5 @@
 
       </div>
     </div>
-  </section>  
+  </section>
 </template>
