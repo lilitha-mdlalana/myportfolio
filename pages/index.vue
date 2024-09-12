@@ -62,7 +62,7 @@ const projects = [
               <div class="mbr-section-btn mt-3">
                 <a
                   class="btn btn-lg btn-black display-7"
-                  href="https://mobiri.se"
+                  href="#contact"
                   >Contact me</a
                 >
               </div>
