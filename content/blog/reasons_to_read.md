@@ -3,7 +3,7 @@ title: "Reasons To Read"
 date: 2024-08-10
 draft: false
 tag: 'General'
-thumbnail : '/blog/images/reasons_to_read_thumbnail.svg'
+thumbnail : '/blog/images/reasons_to_read_thumbnail.jpg'
 slug: 'blog/reasons_to_read'
 author: 'Lilitha Mdlalana'
 ---

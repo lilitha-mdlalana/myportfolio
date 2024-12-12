@@ -26,6 +26,12 @@ const projects = [
     projectLink: "https://lilitha-mdlalana.netlify.app/",
     githubLink: "https://github.com/lilitha-mdlalana/nuxt_portfolio",
   },
+  {
+    imgSrc: "/images/fitquest_mockup.png",
+    projectTitle: "Fitquest",
+    projectDescription: "Mobile app for fitness enthusiasts, including real-time route tracking and distance calculation.",
+    githubLink: "https://github.com/lilitha-mdlalana/flutter-fitness-tracker",
+  },
 ];
 </script>
 
@@ -55,7 +61,7 @@ const projects = [
               <p class="mbr-text mbr-fonts-style mb-4 display-7">
                 👋 Hey there! I'm <em>Lilitha</em>, a
                 <strong>software developer </strong>with a passion for building
-                user interfaces. Welcome to my little corner of the web where I
+                things using code. Welcome to my little corner of the web where I
                 share notes,code snippets and resources on topics that interest
                 me.
               </p>
@@ -90,16 +96,16 @@ const projects = [
               I started software development&nbsp; in 2019 back in high school
               as a hobby, after learning about the all kinds of cool things you
               could build with computer programming...<br />
-              <br />Video games, social media networks, the software that we use
+              <br />Video games, social media networks, and the software that we use
               to make payments, all have some programming language in them(most
               likely <strong>Java</strong> 😁). And it all started with a
               obsession for <strong>sci-fi movies</strong> where I fell in love
               with robotics, arduinos and seeing one's and zero's going up a
               screen in the <strong>Matrix</strong>. And they wanted me to be a
               lawyer, a doctor or something else 😔...<br />
-              <br />When I'm not programming, I'm playing video games, watching
+              <br />When I'm not programming, I'm playing video games, learning a new song on guitar, watching
               a sci-fi movie, playing/watching football&nbsp;⚽ or keeping up to
-              date with what Elon is up to (side note: I'm a fan&nbsp;🤓 ).
+              date with what Elon is up to (side note: I'm a huge fan&nbsp;🤓 ).
             </p>
           </div>
         </div>

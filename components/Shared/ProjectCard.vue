@@ -19,8 +19,9 @@ const props = defineProps({
       </p>
     </div>
     <div class="card-body">
-      <a :href="projectLink" class="card-link">
+      <a v-if="!projectLink" :href="projectLink" class="card-link">
         <svg
+        v-if="projectLink"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"

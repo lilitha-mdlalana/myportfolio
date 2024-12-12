@@ -3,7 +3,7 @@ title: "Variables in JavaScript"
 date: 2024-06-19
 draft: false
 tag: 'Programming'
-thumbnail : '/blog/images/variables_in_js_thumbnail.svg'
+thumbnail : '/blog/images/variables_in_js_thumbnail.jpg'
 slug: 'blog/variables-in-javascript'
 author: 'Lilitha Mdlalana'
 ---

@@ -1,10 +1,5 @@
 <template>
-    <section data-bs-version="5.1" class="footer2 cid-u8a6hbaocT" once="footers" id="footer">
-
-
-
-
-
+  <section data-bs-version="5.1" class="footer2 cid-u8a6hbaocT" once="footers" id="footer">
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-6 center mt-2 mb-3">
@@ -15,20 +10,8 @@
           <div class="row-links mt-2 mb-3">
             <ul class="row-links-soc">
 
-
-
-
               <li class="row-links-soc-item mbr-fonts-style display-7">
-                <a href="#" class="text-white">Instagram</a>
-              </li>
-              <li class="row-links-soc-item mbr-fonts-style display-7">
-                <a href="#" class="text-white">TikTok</a>
-              </li>
-              <li class="row-links-soc-item mbr-fonts-style display-7">
-                <a href="#" class="text-white">YouTube</a>
-              </li>
-              <li class="row-links-soc-item mbr-fonts-style display-7">
-                <a href="#" class="text-white">Twitter</a>
+                <a href="https://www.x.com/devinnom" class="text-white">Twitter</a>
               </li>
             </ul>
           </div>

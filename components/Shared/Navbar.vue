@@ -36,7 +36,7 @@
             <li class="nav-item"><NuxtLink class="nav-link link text-black text-primary display-4" to="/blog">Blog</NuxtLink>
             </li>
           </ul>
-          <div class="navbar-buttons mbr-section-btn"><a class="btn btn-black display-4" href="#">View
+          <div class="navbar-buttons mbr-section-btn"><a class="btn btn-black display-4" href="/resume/Lilitha Mdlalana- Resume.pdf">View
               my resume</a></div>
         </div>
       </div>
