@@ -19,7 +19,7 @@ const props = defineProps({
       </p>
     </div>
     <div class="card-body">
-      <a v-if="projectLink === ''" :href="projectLink" class="card-link">
+      <a :href="projectLink" class="card-link">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

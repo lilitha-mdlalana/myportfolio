@@ -30,7 +30,29 @@ const projects = [
     imgSrc: "/images/fitquest_mockup.png",
     projectTitle: "Fitquest",
     projectDescription: "Mobile app for fitness enthusiasts, including real-time route tracking and distance calculation.",
+    projectLink: "https://github.com/lilitha-mdlalana/flutter-fitness-tracker",
     githubLink: "https://github.com/lilitha-mdlalana/flutter-fitness-tracker",
+  },
+  {
+    imgSrc: "/images/paintapp.png",
+    projectTitle: "Paint App",
+    projectDescription: "Developed an interactive drawing app using the Canvas API to explore 2D rendering, shape manipulation, and user interaction",
+    projectLink: "https://canvaspainterapp.netlify.app/",
+    githubLink: "https://github.com/lilitha-mdlalana/painter",
+  },
+  {
+    imgSrc: "/images/oDelivery.png",
+    projectTitle: "oDelivery",
+    projectDescription: "A delivery startup landing page built to convert visitors into customers.",
+    projectLink: "https://odelivery.netlify.app/",
+    githubLink: "https://github.com/lilitha-mdlalana/odelivery-landing-page",
+  },
+  {
+    imgSrc: "/images/rentpro.png",
+    projectTitle: "RentPro SaaS Landing Page",
+    projectDescription: "Designed and developed the RentPro SaaS landing page, showcasing features and pricing with responsive design and optimized user experience.",
+    projectLink: "https://odelivery.netlify.app/",
+    githubLink: "https://github.com/lilitha-mdlalana/odelivery-landing-page",
   },
 ];
 </script>
