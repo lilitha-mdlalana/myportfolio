@@ -47,13 +47,6 @@ const projects = [
     projectLink: "https://odelivery.netlify.app/",
     githubLink: "https://github.com/lilitha-mdlalana/odelivery-landing-page",
   },
-  {
-    imgSrc: "/images/rentpro.png",
-    projectTitle: "RentPro SaaS Landing Page",
-    projectDescription: "Designed and developed the RentPro SaaS landing page, showcasing features and pricing with responsive design and optimized user experience.",
-    projectLink: "https://odelivery.netlify.app/",
-    githubLink: "https://github.com/lilitha-mdlalana/odelivery-landing-page",
-  },
 ];
 </script>
 
