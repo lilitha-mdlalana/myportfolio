@@ -119,8 +119,7 @@ const projects = [
               screen in the <strong>Matrix</strong>. And they wanted me to be a
               lawyer, a doctor or something else 😔...<br />
               <br />When I'm not programming, I'm playing video games, learning a new song on guitar, watching
-              a sci-fi movie, playing/watching football&nbsp;⚽ or keeping up to
-              date with what Elon is up to (side note: I'm a huge fan&nbsp;🤓 ).
+              a sci-fi movie and playing/watching football&nbsp;⚽.
             </p>
           </div>
         </div>
