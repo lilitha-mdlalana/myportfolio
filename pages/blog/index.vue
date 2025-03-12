@@ -8,7 +8,7 @@ useHead({
   title: "Lilitha Mdlalana - Blog",
   meta: [
     {
-      hid: "description",
+      // hid: "description",
       name: "description",
       content: "Welcome to my tech blog where I share insights, tutorials, and updates on software development. Explore articles on web development, programming languages, frameworks, and best practices. Join me on my journey as a student programmer and stay updated with the latest trends and tips in the tech world",
     },
