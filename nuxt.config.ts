@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   css: [
     "~/assets/web/assets/mobirise-icons2/mobirise2.css",
     "~/assets/bootstrap/css/bootstrap.min.css",
@@ -11,10 +12,12 @@ export default defineNuxtConfig({
     "~/assets/theme/css/style.css",
     "~/assets/mobirise/css/mbr-additional.css?v=IjZ8hm",
   ],
+
   modules:[
     '@nuxt/content',
     'nuxt-aos'
   ],
+
   content: {
     highlight: {
         theme: {
@@ -23,4 +26,6 @@ export default defineNuxtConfig({
         },
     },
 },
+
+  compatibilityDate: "2025-03-26",
 });
