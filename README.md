@@ -1,75 +1,55 @@
-# Nuxt 3 Minimal Starter
+<img src="public/preview.png" />
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Blog
 
-## Setup
+Blog is a neobrutalism-styled astro tailwind template for blogs.
 
-Make sure to install the dependencies:
+## Get started
+
+[Create a new repo](https://github.com/neobrutalism-templates/blog/generate) from this template.
+
+### Installation
+
+This template uses `pnpm` package manager so make sure you have it installed.
+
+To install all dependencies run:
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+pnpm i
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+To run the app locally:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
 pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+### Config
 
-Build the application for production:
+- Go to `astro.config.mjs` and change site
+- Go to `src/config.ts` and configure data for meta tags
+- You can customize code blocks config by changing `expressiveCode` object in astro config. Visit [expressive-code docs](https://expressive-code.com/reference/configuration) for more info.
+- To change code blocks theme, you'll have to update themes both in `themes` array and in `config.ts`
 
-```bash
-# npm
-npm run build
+### How to add new post
 
-# pnpm
-pnpm run build
+Create a new md/mdx file inside src/content/posts, and make sure it's in this format:
 
-# yarn
-yarn build
+```
+---
+title: 'First post'
+description: 'Lorem ipsum dolor sit amet'
+pubDate: 'Dec 22 2023'
+tags: ['astro', 'blogging', 'learning']
+---
 
-# bun
-bun run build
+Your post
 ```
 
-Locally preview production build:
+### Styling
 
-```bash
-# npm
-npm run preview
+To change the styling visit [styling docs](https://neobrutalism.dev/styling), and copy the desired styling to your css like it's shown in the styling docs.
 
-# pnpm
-pnpm run preview
+Make sure to not delete `fontFamily`, `screens`, and `typography` from tailwind config.
 
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+After you change the font weight you'll have to update font imports inside `src/layouts/Base.astro`.

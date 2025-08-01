@@ -1,0 +1,67 @@
+---
+import Base from '@/layouts/Base.astro'
+
+const labs = [
+  {
+    title: 'Markdown MDX Blog in Astro',
+    description:
+      'Experimenting with MDX for rich interactive blog posts using Astro.',
+    href: '/labs/mdx-blog',
+    tags: ['astro', 'mdx'],
+    builtWith: ['Astro', 'MDX', 'Tailwind'],
+  },
+  {
+    title: '3D Hover Cards',
+    description:
+      'Building interactive 3D cards using CSS transform and perspective.',
+    href: '/labs/3d-cards',
+    tags: ['astro', 'mdx'],
+    builtWith: ['Astro', 'MDX', 'Tailwind'],
+  },
+  // Add more labs here
+]
+---
+
+<Base meta={{ title: 'Labs | Experiments' }}>
+  <section class="pt-20 pb-12">
+    <h1 class="font-heading mb-4 text-4xl tracking-tight uppercase md:text-5xl">
+      Labs 🧪
+    </h1>
+    <p class="mb-10 max-w-xl text-base md:text-lg">
+      This is where I play. Each lab is a tiny experiment, a proof of concept,
+      or a curiosity I wanted to explore. Some are polished, others are
+      half-baked — all are learning in motion.
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        labs.map((lab) => (
+          <a
+            href={lab.href}
+            class="group bg-secondary-background rounded-lg border-2 border-black p-4 shadow-[4px_4px_0_0_#000] transition-all duration-150 ease-in-out hover:shadow-[8px_8px_0_0_#000]"
+          >
+            <h2 class="text-xl font-semibold group-hover:underline">
+              {lab.title}
+            </h2>
+            <p class="text-foreground/80 mt-2 text-sm">{lab.description}</p>
+            <div class="text-muted-foreground mt-3 flex flex-wrap gap-2 font-mono text-xs uppercase">
+              {lab.tags.map((tag) => (
+                <span class="bg-muted rounded px-2 py-0.5">{tag}</span>
+              ))}
+            </div>
+            {lab.builtWith && (
+              <div class="text-muted-foreground mt-2 flex flex-wrap gap-1 text-[11px] italic">
+                <span class="text-foreground/70 mr-1 font-bold">
+                  Built with:
+                </span>
+                {lab.builtWith.map((tool) => (
+                  <span>{tool}</span>
+                ))}
+              </div>
+            )}
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Base>
