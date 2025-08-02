@@ -3,23 +3,55 @@ import Base from '@/layouts/Base.astro'
 
 const labs = [
   {
-    title: 'Markdown MDX Blog in Astro',
+    title: 'CSS Flower Garden',
     description:
-      'Experimenting with MDX for rich interactive blog posts using Astro.',
-    href: '/labs/mdx-blog',
-    tags: ['astro', 'mdx'],
-    builtWith: ['Astro', 'MDX', 'Tailwind'],
+      'A vibrant animated flower scene built with pure HTML and CSS. Exploring nature-inspired visuals and micro-interactions.',
+    href: 'https://floral-symphony.netlify.app/',
+    tags: ['css', 'animation', 'html'],
+    builtWith: ['HTML', 'CSS'],
   },
   {
-    title: '3D Hover Cards',
+    title: 'Canvas Painting App',
     description:
-      'Building interactive 3D cards using CSS transform and perspective.',
-    href: '/labs/3d-cards',
-    tags: ['astro', 'mdx'],
-    builtWith: ['Astro', 'MDX', 'Tailwind'],
+      'A simple drawing app built with the Canvas API to explore event handling and rendering.',
+    href: 'https://canvaspainterapp.netlify.app/',
+    tags: ['javascript', 'canvas'],
+    builtWith: ['HTML Canvas', 'JavaScript', 'Vanilla CSS'],
   },
-  // Add more labs here
-]
+  {
+    title: 'Portfolio Website',
+    description:
+      'My personal portfolio site built with Astro, showcasing my projects, blog, and labs.',
+    href: '/',
+    tags: ['astro', 'portfolio'],
+    builtWith: ['Astro', 'Tailwind CSS', 'Markdown'],
+  },
+  {
+    title: 'LPT-LMS',
+    description:
+      'Automation tool for streamlining LMS review workflows—auto-approves, clones, and messages via Slack using Python, Selenium, and Bash.',
+    href: 'https://github.com/lilitha-mdlalana/lpt-lms',
+    tags: ['python', 'automation', 'lms'],
+    builtWith: ['Python', 'Selenium', 'Bash'],
+  },
+  {
+    title: 'Flutter Fitness Tracker',
+    description:
+      'A mobile app to track runs, routes, and goals with real-time maps and offline support.',
+    href: 'https://github.com/lilitha-mdlalana/flutter-fitness-tracker',
+    tags: ['flutter', 'fitness'],
+    builtWith: ['Flutter', 'Firebase', 'SQLite', 'FlutterMap'],
+  },
+  {
+    title: 'Robot Worlds',
+    description:
+      'Multiplayer robot simulation game powered by Java sockets, threads, and SQL. Explore, battle, and persist world states with Docker and Hibernate.',
+    href: 'https://github.com/lilitha-mdlalana/robot_worlds/',
+    tags: ['java', 'multiplayer', 'game'],
+    builtWith: ['Java', 'Sockets', 'Threads', 'SQL', 'Docker', 'Hibernate'],
+  },
+];
+
 ---
 
 <Base meta={{ title: 'Labs | Experiments' }}>
@@ -38,17 +70,13 @@ const labs = [
         labs.map((lab) => (
           <a
             href={lab.href}
+            target="_blank"
             class="group bg-secondary-background rounded-lg border-2 border-black p-4 shadow-[4px_4px_0_0_#000] transition-all duration-150 ease-in-out hover:shadow-[8px_8px_0_0_#000]"
           >
             <h2 class="text-xl font-semibold group-hover:underline">
               {lab.title}
             </h2>
             <p class="text-foreground/80 mt-2 text-sm">{lab.description}</p>
-            <div class="text-muted-foreground mt-3 flex flex-wrap gap-2 font-mono text-xs uppercase">
-              {lab.tags.map((tag) => (
-                <span class="bg-muted rounded px-2 py-0.5">{tag}</span>
-              ))}
-            </div>
             {lab.builtWith && (
               <div class="text-muted-foreground mt-2 flex flex-wrap gap-1 text-[11px] italic">
                 <span class="text-foreground/70 mr-1 font-bold">

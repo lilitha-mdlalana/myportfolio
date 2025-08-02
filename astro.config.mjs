@@ -25,7 +25,7 @@ export default defineConfig({
     }),
     mdx(),
   ],
-  site: 'https://neobrutalism-blog.netlify.app/',
+  site: 'https://lilitha-mdlalana.is-a.dev',
   vite: {
     plugins: [tailwindcss()],
   },

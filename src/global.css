@@ -22,7 +22,7 @@
   --background: oklch(18% 0.02 250);
   --secondary-background: oklch(24% 0.03 250);
   --foreground: oklch(93% 0.02 250);
-  --main: oklch(85% 0.15 270);
+  --main: oklch(28% 0.04 250);
   --border: oklch(35% 0.01 250);
   --ring: oklch(65% 0.1 250);
   --overlay: oklch(0% 0 0 / 0.7);
