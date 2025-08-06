@@ -1,55 +1,41 @@
-<img src="public/preview.png" />
+# 🧪 Labs Portfolio — Astro + MDX Blog
 
-# Blog
+Welcome to my digital playground! This project is a personal blog and portfolio built with [Astro](https://astro.build), featuring MDX-powered posts, interactive experiments, and documented learnings. It serves as a creative lab where I explore new technologies, share ideas, and showcase projects that matter to me.
 
-Blog is a neobrutalism-styled astro tailwind template for blogs.
-
-## Get started
-
-[Create a new repo](https://github.com/neobrutalism-templates/blog/generate) from this template.
-
-### Installation
-
-This template uses `pnpm` package manager so make sure you have it installed.
-
-To install all dependencies run:
-
-```bash
-pnpm i
-```
-
-To run the app locally:
-
-```bash
-pnpm run dev
-```
-
-### Config
-
-- Go to `astro.config.mjs` and change site
-- Go to `src/config.ts` and configure data for meta tags
-- You can customize code blocks config by changing `expressiveCode` object in astro config. Visit [expressive-code docs](https://expressive-code.com/reference/configuration) for more info.
-- To change code blocks theme, you'll have to update themes both in `themes` array and in `config.ts`
-
-### How to add new post
-
-Create a new md/mdx file inside src/content/posts, and make sure it's in this format:
-
-```
----
-title: 'First post'
-description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Dec 22 2023'
-tags: ['astro', 'blogging', 'learning']
 ---
 
-Your post
-```
+## 🚀 Features
 
-### Styling
+- 📝 **MDX Blog** — Rich blog posts with embedded React/JS components
+- 🎨 **Theming** — Dark/light mode with configurable color themes
+- 💫 **Native View Transitions** — Seamless page animations using browser-native APIs
+- 📁 **Labs Section** — Dedicated area to document experiments and side projects
+- 📱 **Responsive Design** — Mobile-first layout with Tailwind CSS
+- ⚡ **Fast by Default** — Powered by Astro Islands architecture for speed and simplicity
 
-To change the styling visit [styling docs](https://neobrutalism.dev/styling), and copy the desired styling to your css like it's shown in the styling docs.
+---
 
-Make sure to not delete `fontFamily`, `screens`, and `typography` from tailwind config.
+## 🛠️ Tech Stack
 
-After you change the font weight you'll have to update font imports inside `src/layouts/Base.astro`.
+| Feature         | Tech                     |
+|----------------|--------------------------|
+| Framework      | [Astro](https://astro.build) |
+| Styling        | [Tailwind CSS](https://tailwindcss.com) |
+| Blog Content   | [MDX](https://mdxjs.com) |
+| Fonts          | [Inter](https://rsms.me/inter/) via Fontsource |
+| Icons          | [Lucide Icons](https://lucide.dev) |
+| Deployment     | [Vercel](https://vercel.com) (or your platform of choice) |
+
+---
+
+## 🧪 Labs Highlights
+
+Each project in the **Labs** section includes a brief description, tags, and technologies used. Some recent labs:
+
+- 🎨 A **JavaScript painting app** using the Canvas API  
+- 💪 A **Flutter fitness tracker** with offline-first support and Firebase sync  
+- 🤖 A **review automation system** in Python, Selenium, and Bash  
+- 🧵 A **multiplayer game backend** with sockets, threads, SQL, Docker, and Hibernate  
+- 🌸 A **CSS flower animation** — pure HTML/CSS with plans for future interactivity
+
+Explore them at `/labs`.
