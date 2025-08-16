@@ -17,6 +17,38 @@ const {
 
 <html lang={config.lang}>
   <head>
+    <!-- CRITICAL: This must be the very first script to prevent theme flash -->
+    <script is:inline define:vars={{ config }}>
+      (function() {
+        try {
+          const theme = localStorage.getItem('theme')
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const shouldBeDark = theme === 'dark' || (!theme && prefersDark)
+          
+          // Apply to html element for your CSS custom variant
+          if (shouldBeDark) {
+            document.documentElement.classList.add('dark')
+            document.documentElement.setAttribute('data-theme', config.themes.dark)
+          } else {
+            document.documentElement.classList.remove('dark')
+            document.documentElement.setAttribute('data-theme', config.themes.light)
+          }
+          
+          // Also set a data attribute to prevent any flash
+          document.documentElement.setAttribute('data-theme-ready', 'true')
+        } catch (e) {
+          // Fallback if localStorage is not available
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark')
+            document.documentElement.setAttribute('data-theme', config.themes.dark)
+          } else {
+            document.documentElement.setAttribute('data-theme', config.themes.light)
+          }
+          document.documentElement.setAttribute('data-theme-ready', 'true')
+        }
+      })()
+    </script>
+    
     <BaseHead title={title} description={description} />
   </head>
   <body
@@ -33,29 +65,31 @@ const {
     <script>
       import config from '@/config'
 
-      function colorMode() {
-        if (
-          localStorage.theme === 'dark' ||
-          (!('theme' in localStorage) &&
-            window.matchMedia('(prefers-color-scheme: dark)').matches)
-        ) {
-          document.documentElement.classList.add('dark')
-          document.documentElement.setAttribute(
-            'data-theme',
-            config.themes.dark as string,
-          )
-        } else {
-          document.documentElement.classList.remove('dark')
-          document.documentElement.setAttribute(
-            'data-theme',
-            config.themes.light as string,
-          )
+      function applyTheme() {
+        try {
+          const theme = localStorage.getItem('theme')
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+          
+          if (theme === 'dark' || (!theme && prefersDark)) {
+            document.documentElement.classList.add('dark')
+            document.documentElement.setAttribute('data-theme', config.themes.dark as string)
+          } else {
+            document.documentElement.classList.remove('dark')
+            document.documentElement.setAttribute('data-theme', config.themes.light as string)
+          }
+        } catch (e) {
+          // Fallback
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark')
+            document.documentElement.setAttribute('data-theme', config.themes.dark as string)
+          }
         }
       }
 
-      colorMode()
-      document.addEventListener('astro:after-swap', colorMode)
+      // Apply theme after navigation
+      document.addEventListener('astro:after-swap', applyTheme)
 
+      // View transitions
       if (document.startViewTransition) {
         document.querySelectorAll('a[href]').forEach((link) => {
           const anchor = link as HTMLAnchorElement
