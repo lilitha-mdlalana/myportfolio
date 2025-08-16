@@ -1,0 +1,94 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@config '../tailwind.config.js';
+
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(97.8% 0.013 255);            /* slightly brighter */
+  --secondary-background: oklch(94.5% 0.015 255);  /* soft contrast */
+  --foreground: oklch(15% 0.02 260);               /* improved readability */
+  --muted: oklch(45% 0.02 260);                    /* for subtitles, meta text */
+  --main: oklch(56.522% 0.03481 273.241);                     /* accent color for links/buttons */
+  --border: oklch(85% 0.02 260);                   /* clean subtle lines */
+  --ring: oklch(70% 0.14 270);                     /* for focus ring, inputs */
+  --overlay: oklch(0% 0 0 / 0.04);                 /* modal overlays etc. */
+  --shadow: 0 2px 6px oklch(0% 0 0 / 0.06);
+}
+
+.dark {
+  --background: oklch(18% 0.02 250);
+  --secondary-background: oklch(24% 0.03 250);
+  --foreground: oklch(93% 0.02 250);
+  --main: oklch(28% 0.04 250);
+  --border: oklch(35% 0.01 250);
+  --ring: oklch(65% 0.1 250);
+  --overlay: oklch(0% 0 0 / 0.7);
+  --shadow: 0 4px 12px oklch(0% 0 0 / 0.2);
+}
+
+@theme inline {
+  --color-main: var(--main);
+  --color-background: var(--background);
+  --color-secondary-background: var(--secondary-background);
+  --color-foreground: var(--foreground);
+  --color-main-foreground: var(--main-foreground);
+  --color-border: var(--border);
+  --color-overlay: var(--overlay);
+  --color-ring: var(--ring);
+
+  --spacing-boxShadowX: 0px;
+  --spacing-boxShadowY: 4px;
+  --spacing-reverseBoxShadowX: -0px;
+  --spacing-reverseBoxShadowY: -4px;
+  --radius-base: 10px;
+  --shadow-shadow: var(--shadow);
+  --font-weight-base: 500;
+  --font-weight-heading: 700;
+
+  --breakpoint-m700: max-width: 700px;
+  --breakpoint-m500: max-width: 500px;
+  --breakpoint-m400: max-width: 400px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+mark {
+  background-color: var(--main);
+}
+/* For fade effect */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+::view-transition-old(root) {
+  animation-name: fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: fade-in;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

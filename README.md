@@ -1,75 +1,41 @@
-# Nuxt 3 Minimal Starter
+# 🧪 Labs Portfolio — Astro + MDX Blog
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Welcome to my digital playground! This project is a personal blog and portfolio built with [Astro](https://astro.build), featuring MDX-powered posts, interactive experiments, and documented learnings. It serves as a creative lab where I explore new technologies, share ideas, and showcase projects that matter to me.
 
-## Setup
+---
 
-Make sure to install the dependencies:
+## 🚀 Features
 
-```bash
-# npm
-npm install
+- 📝 **MDX Blog** — Rich blog posts with embedded React/JS components
+- 🎨 **Theming** — Dark/light mode with configurable color themes
+- 💫 **Native View Transitions** — Seamless page animations using browser-native APIs
+- 📁 **Labs Section** — Dedicated area to document experiments and side projects
+- 📱 **Responsive Design** — Mobile-first layout with Tailwind CSS
+- ⚡ **Fast by Default** — Powered by Astro Islands architecture for speed and simplicity
 
-# pnpm
-pnpm install
+---
 
-# yarn
-yarn install
+## 🛠️ Tech Stack
 
-# bun
-bun install
-```
+| Feature         | Tech                     |
+|----------------|--------------------------|
+| Framework      | [Astro](https://astro.build) |
+| Styling        | [Tailwind CSS](https://tailwindcss.com) |
+| Blog Content   | [MDX](https://mdxjs.com) |
+| Fonts          | [Inter](https://rsms.me/inter/) via Fontsource |
+| Icons          | [Lucide Icons](https://lucide.dev) |
+| Deployment     | [Vercel](https://vercel.com) (or your platform of choice) |
 
-## Development Server
+---
 
-Start the development server on `http://localhost:3000`:
+## 🧪 Labs Highlights
 
-```bash
-# npm
-npm run dev
+Each project in the **Labs** section includes a brief description, tags, and technologies used. Some recent labs:
 
-# pnpm
-pnpm run dev
+- 🎨 A **JavaScript painting app** using the Canvas API  
+- 💪 A **Flutter fitness tracker** with offline-first support and Firebase sync  
+- 🤖 A **review automation system** in Python, Selenium, and Bash  
+- 🧵 A **multiplayer game backend** with sockets, threads, SQL, Docker, and Hibernate  
+- 🌸 A **CSS flower animation** — pure HTML/CSS with plans for future interactivity
 
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Explore them at `/labs`.
