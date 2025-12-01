@@ -26,6 +26,8 @@ export default defineConfig({
     mdx(),
   ],
   site: 'https://lilitha-mdlalana.is-a.dev',
+  trailingSlash: 'ignore',
+  output: 'static',
   vite: {
     plugins: [tailwindcss()],
   },

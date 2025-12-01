@@ -2,6 +2,24 @@
 @import 'tw-animate-css';
 @config '../tailwind.config.js';
 
+/* Prevent flash of wrong theme */
+html:not([data-theme-ready]) {
+  visibility: hidden !important;
+}
+
+html[data-theme-ready] {
+  visibility: visible;
+}
+
+/* Ensure immediate color scheme application */
+:root {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
 @plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:is(.dark *));
