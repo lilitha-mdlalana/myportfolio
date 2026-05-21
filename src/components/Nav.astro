@@ -15,11 +15,29 @@ import config from '@/config'
         <span class="toggle-icon" id="toggleIcon">☀️</span>
         <span id="toggleLabel">LIGHT</span>
       </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </div>
 </nav>
 
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <ul class="mobile-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/labs">Labs</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </div>
+</div>
+
 <script is:inline define:vars={{ config }}>
+  // THEME TOGGLE
   const toggle = document.getElementById('themeToggle')
   const icon = document.getElementById('toggleIcon')
   const label = document.getElementById('toggleLabel')
@@ -47,6 +65,37 @@ import config from '@/config'
   })
 
   document.addEventListener('astro:after-swap', syncToggleUI)
+
+  // HAMBURGER
+  function setupHamburger() {
+    const btn = document.getElementById('hamburger')
+    const menu = document.getElementById('mobileMenu')
+
+    btn?.addEventListener('click', () => {
+      const isOpen = menu?.classList.contains('open')
+      if (isOpen) {
+        menu?.classList.remove('open')
+        btn.setAttribute('aria-expanded', 'false')
+        btn.classList.remove('active')
+      } else {
+        menu?.classList.add('open')
+        btn.setAttribute('aria-expanded', 'true')
+        btn.classList.add('active')
+      }
+    })
+
+    // Close on link click
+    menu?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open')
+        btn?.classList.remove('active')
+        btn?.setAttribute('aria-expanded', 'false')
+      })
+    })
+  }
+
+  setupHamburger()
+  document.addEventListener('astro:after-swap', setupHamburger)
 </script>
 
 <style>
@@ -143,8 +192,106 @@ import config from '@/config'
 
   .toggle-icon { font-size: 14px; }
 
+  /* HAMBURGER */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 38px;
+    height: 38px;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.15s ease;
+  }
+
+  .hamburger:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow);
+  }
+
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--text);
+    transition: all 0.2s ease;
+    transform-origin: center;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* MOBILE MENU */
+  .mobile-menu {
+    position: fixed;
+    top: 57px; /* nav height */
+    left: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    border-bottom: 2px solid var(--border);
+    z-index: 999;
+    transform: translateY(-110%);
+    transition: transform 0.25s ease;
+    display: none;
+  }
+
+  .mobile-menu.open {
+    transform: translateY(0);
+  }
+
+  .mobile-menu-inner {
+    padding: 8px 20px 16px;
+  }
+
+  .mobile-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-links li {
+    border-bottom: 1px solid var(--surface2);
+  }
+
+  .mobile-links li:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-links a {
+    display: block;
+    padding: 14px 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text2);
+    text-decoration: none;
+    transition: color 0.12s ease;
+  }
+
+  .mobile-links a:hover {
+    color: var(--accent);
+  }
+
   @media (max-width: 768px) {
     .nav-links { display: none; }
     .nav-inner { padding: 16px 20px; }
+    .hamburger { display: flex; }
+    .mobile-menu { display: block; }
   }
 </style>
