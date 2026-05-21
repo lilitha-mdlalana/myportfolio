@@ -1,64 +1,150 @@
 ---
-import ThemeSwitcher from '@/components/ThemeSwitcher'
+import config from '@/config'
 ---
 
-<nav class="fixed top-0 left-0 z-50 w-full px-5">
-  <!-- Navbar Container -->
-  <div
-    class="rounded-base border-border text-foreground bg-secondary-background w400:h-[unset] w400:flex-col w400:gap-3 w400:py-3 z-50 mx-auto mt-5 flex h-[70px] w-full max-w-[860px] items-center justify-between border-2 px-5
-    shadow-[4px_4px_0_0_#000] transition-all duration-200 hover:shadow-[8px_8px_0_0_#000]"
-  >
-    <a href="/">
-      <h2 class="font-heading w500:text-2xl w400:text-xl text-3xl">Lilitha Mdlalana</h2>
-    </a>
-
-    <!-- Hamburger Button -->
-    <button id="hamburger" class="md:hidden w400:block focus:outline-none">
-      <svg
-        class="h-6 w-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"
-        />
-      </svg>
-    </button>
-
-    <!-- Desktop Menu -->
-    <div class="hidden md:flex w500:text-base w400:text-sm text-lg items-center">
-      <a class="md:mr-10" href="/about">About</a>
-      <a class="md:mr-10" href="/labs">Labs</a>
-      <a class="md:mr-10" href="/blog">Blog</a>
-      <ThemeSwitcher client:load />
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">LM<span>.</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/labs">Labs</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="toggle-icon" id="toggleIcon">☀️</span>
+        <span id="toggleLabel">LIGHT</span>
+      </button>
     </div>
   </div>
-
-  <!-- Mobile Dropdown Menu (Each item stacked) -->
-  <div
-    id="mobile-menu"
-    class="hidden md:hidden flex-col w-full max-w-[860px] mx-auto mt-2 rounded-base border-2 border-border bg-secondary-background px-5 py-3 text-lg shadow-[4px_4px_0_0_#000] gap-2"
-  >
-    <a class="block" href="/about">About</a>
-    <a class="block" href="/labs">Labs</a>
-    <a class="block" href="/blog">Blog</a>
-    <div class="mt-2">
-      <ThemeSwitcher client:load />
-    </div>
-  </div>
-
-  <!-- Toggle Script -->
-  <script type="module" is:inline>
-    const btn = document.getElementById('hamburger');
-    const menu = document.getElementById('mobile-menu');
-
-    btn?.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  </script>
 </nav>
+
+<script is:inline define:vars={{ config }}>
+  const toggle = document.getElementById('themeToggle')
+  const icon = document.getElementById('toggleIcon')
+  const label = document.getElementById('toggleLabel')
+
+  function syncToggleUI() {
+    const isDark = document.documentElement.classList.contains('dark')
+    if (icon) icon.textContent = isDark ? '🌙' : '☀️'
+    if (label) label.textContent = isDark ? 'DARK' : 'LIGHT'
+  }
+
+  syncToggleUI()
+
+  toggle?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.contains('dark')
+    if (isDark) {
+      document.documentElement.classList.remove('dark')
+      document.documentElement.setAttribute('data-theme', config.themes.light)
+      localStorage.setItem('theme', 'light')
+    } else {
+      document.documentElement.classList.add('dark')
+      document.documentElement.setAttribute('data-theme', config.themes.dark)
+      localStorage.setItem('theme', 'dark')
+    }
+    syncToggleUI()
+  })
+
+  document.addEventListener('astro:after-swap', syncToggleUI)
+</script>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    border-bottom: 2px solid var(--border);
+    z-index: 1000;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-logo {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text2);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border: 2px solid transparent;
+    transition: all 0.15s ease;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--text);
+    border: 2px solid var(--border);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    transform: translate(-1px, -1px);
+  }
+
+  .theme-toggle {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    padding: 7px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.15s ease;
+  }
+
+  .theme-toggle:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow);
+  }
+
+  .theme-toggle:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+  }
+
+  .toggle-icon { font-size: 14px; }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-inner { padding: 16px 20px; }
+  }
+</style>

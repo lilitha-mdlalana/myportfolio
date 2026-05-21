@@ -2,140 +2,242 @@
 import Base from '@/layouts/Base.astro'
 ---
 
-<Base meta={{ title: 'About – Lilitha Mdlalana' }}>
-  <section
-    class="w500:text-sm mx-auto max-w-3xl pt-16 pb-20 text-base leading-relaxed tracking-wide md:text-lg"
-  >
-    <h1
-      class="font-heading mb-6 text-4xl leading-tight tracking-wide uppercase md:text-5xl"
-    >
-      A little about me...
-    </h1>
+<Base meta={{ title: 'About — Lilitha Mdlalana' }}>
+  <div class="page-wrap">
+    <div class="section-inner">
+      <div class="page-header fade-in">
+        <span class="section-label">About</span>
+        <h1 class="page-title">A little about me</h1>
+      </div>
 
-    <p class="mb-6">
-      Hey, I’m Lilitha — a curious mind, a self-taught coder but also <span
-        class="group relative cursor-help"
-      >
-        WTC-made
-        <span
-          class="absolute top-full left-0 mt-1 w-max rounded bg-black px-2 py-1 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100"
-        >
-          WeThinkCode_
-        </span>
-      </span>, and a creative at heart.
-    </p>
+      <div class="about-body">
+        <div class="about-text fade-in">
+          <p>
+            Hey, I'm Lilitha — a curious mind, a self-taught coder but also
+            <span class="wtc-tip" title="WeThinkCode_">WTC-made</span>, and a
+            creative at heart.
+          </p>
 
-    <p class="mb-6">
-      I started software development back in high school in 2019. It began as a
-      hobby, sparked by my love for sci-fi movies and an obsession with the cool
-      tech they featured — think robots, Arduinos, and those iconic streams of
-      ones and zeros from <em>The Matrix</em>. I remember being fascinated by
-      how software seemed to power everything — from video games and social
-      media, to the apps we use every day.
-    </p>
+          <p>
+            I started software development back in high school in 2019. It
+            began as a hobby, sparked by my love for sci-fi movies and an
+            obsession with the cool tech they featured. I remember being
+            fascinated by how software seemed to power everything — from video
+            games and social media, to the apps we use every day.
+          </p>
 
-    <p class="mb-6">
-      While the world around me suggested a more traditional path (doctor,
-      lawyer... you know how it goes 😅), I chose code — and I haven’t looked
-      back.
-    </p>
+          <p>
+            While the world suggested a more traditional path (doctor,
+            lawyer... you know how it goes), I chose code — and I haven't
+            looked back.
+          </p>
+        </div>
 
-    <hr class="my-8 border-t-2 border-black" />
+        <div class="divider fade-in"></div>
 
-    <h2 class="mb-4 text-2xl font-semibold">What I’m doing now</h2>
-    <p class="mb-6">
-      I’m currently a <strong>Software Engineer at Mukuru</strong>,
-      where I’m getting hands-on experience in building real-world applications
-      and learning from some brilliant engineers. Every day’s a step forward —
-      whether I’m writing cleaner code, shipping features, or just debugging
-      something stubborn.
-    </p>
+        <div class="about-section fade-in">
+          <h2>What I'm doing now</h2>
+          <p>
+            I'm currently a <strong>Software Engineer at Mukuru</strong>, where
+            I build and maintain frontend products with React, TypeScript, and
+            Chakra UI. Every day is a step forward — shipping features,
+            reviewing code, and learning from brilliant engineers.
+          </p>
+          <p>
+            Beyond the 9-to-5, I'm constantly building side projects, writing
+            about what I'm learning, and refining my skills across frontend and
+            backend.
+          </p>
+        </div>
 
-    <p class="mb-6">
-      Beyond the 9-to-5, I’m constantly building side projects, writing about
-      what I’m learning, and trying to refine my skills across both frontend and
-      backend.
-    </p>
+        <div class="divider fade-in"></div>
 
-    <hr class="my-8 border-t-2 border-black" />
+        <div class="about-section fade-in">
+          <h2>Outside of code</h2>
+          <ul class="interest-list">
+            <li>🎸 Playing guitar — fingerstyle and R&amp;B-inspired progressions</li>
+            <li>🎮 Gaming — always down for a good challenge</li>
+            <li>🎥 Watching sci-fi (still can't get enough)</li>
+            <li>⚽ Playing or watching football</li>
+          </ul>
+        </div>
 
-    <h2 class="mb-4 text-2xl font-semibold">Outside of code...</h2>
-    <ul class="mb-6 list-disc space-y-2 pl-6">
-      <li>
-        🎸 Playing guitar — I love fingerstyle and R&B-inspired progressions
-      </li>
-      <li>🎮 Gaming — always down for a good challenge</li>
-      <li>🎥 Watching a sci-fi film (still can’t get enough)</li>
-      <li>⚽ Playing or watching football</li>
-    </ul>
+        <div class="divider fade-in"></div>
 
-    <hr class="my-8 border-t-2 border-black" />
+        <div class="about-section fade-in">
+          <h2>Skills</h2>
+          <div class="skills-grid">
+            <span class="tag accent">JavaScript</span>
+            <span class="tag blue">TypeScript</span>
+            <span class="tag accent">React</span>
+            <span class="tag">Next.js</span>
+            <span class="tag blue">Chakra UI</span>
+            <span class="tag">Flutter &amp; Dart</span>
+            <span class="tag">Java</span>
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Firebase</span>
+            <span class="tag blue">Docker</span>
+            <span class="tag">Astro</span>
+            <span class="tag green">Markdown/MDX</span>
+          </div>
+        </div>
 
-    <h2 class="mb-4 text-2xl font-semibold">What drives me</h2>
-    <p class="mb-6">
-      I believe in building things that are both useful and meaningful — tools,
-      stories, or ideas that make people feel something. My dream is to keep
-      growing as a developer and maybe even help others along the way.
-      Creativity, curiosity, and coffee — that’s my stack.
-    </p>
-    <hr class="my-8 border-t-2 border-black" />
+        <div class="divider fade-in"></div>
 
-    <h3 class="mt-6 text-xl font-semibold">🛠️ Skills</h3>
-    <ul
-      class="grid list-inside list-disc grid-cols-2 gap-2 text-sm md:grid-cols-3"
-    >
-      <li>JavaScript</li>
-      <li>TypeScript</li>
-      <li>React & Next.js</li>
-      <li>Flutter & Dart</li>
-      <li>Java</li>
-      <li>Python (Automation, Selenium)</li>
-      <li>SQL & SQLite</li>
-      <li>Firebase</li>
-      <li>Docker</li>
-      <li>Tailwind CSS</li>
-      <li>Astro</li>
-      <li>Markdown/MDX</li>
-    </ul>
+        <div class="about-section fade-in">
+          <h2>What drives me</h2>
+          <p>
+            I believe in building things that are both useful and meaningful —
+            tools, stories, or ideas that make people feel something. My dream
+            is to keep growing as a developer and maybe help others along the
+            way. Creativity, curiosity, and coffee — that's my stack.
+          </p>
+        </div>
 
-    <p class="mt-6">
-      I'm currently focused on becoming a well-rounded software engineer by
-      blending technical depth with creative expression — whether that’s through
-      code, design, or writing.
-    </p>
-
-    <p>
-      If you're into building cool things, learning in public, or just vibing
-      over sci-fi and sound design — hit me up ✌️
-    </p>
-
-    <h3 class="mt-10 text-xl font-semibold">📬 Contact</h3>
-    <p class="mt-2 text-sm leading-relaxed">
-      Whether it’s to chat about a project, collab on something creative, or
-      just say hey — feel free to reach out.
-    </p>
-
-    <div class="mt-4 space-y-2 text-sm">
-      <p>
-        <span class="font-medium">Email:</span>
-        <a href="mailto:innomdlalana@gmail.com" class="text-blue-500 underline"
-          >innomdlalana@gmail.com</a
-        >
-      </p>
-      <p>
-        <span class="font-medium">GitHub:</span>
-        <a
-          href="https://github.com/lilitha-mdlalana"
-          class="text-blue-500 underline">lilitha-mdlalana</a
-        >
-      </p>
-      <p>
-        <span class="font-medium">LinkedIn:</span>
-        <a
-          href="https://linkedin.com/in/lilitha-mdlalana"
-          class="text-blue-500 underline">linkedin.com/in/lilitha-mdlalana</a
-        >
-      </p>
+        <div class="contact-block fade-in">
+          <p class="contact-eyebrow">Get in touch</p>
+          <div class="contact-links">
+            <a href="mailto:innomdlalana@gmail.com" class="btn btn-primary">✉ Email Me</a>
+            <a href="https://github.com/lilitha-mdlalana" target="_blank" class="btn btn-secondary">↗ GitHub</a>
+            <a href="https://linkedin.com/in/lilitha-mdlalana" target="_blank" class="btn btn-secondary">↗ LinkedIn</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
 </Base>
+
+<style>
+  .page-wrap {
+    padding: 120px 0 100px;
+  }
+
+  .page-header {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 48px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 20px;
+  }
+
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    padding: 4px 10px;
+    box-shadow: 2px 2px 0 var(--accent);
+    white-space: nowrap;
+  }
+
+  .page-title {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text);
+  }
+
+  .about-body {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .about-text p,
+  .about-section p {
+    font-size: 16px;
+    color: var(--text2);
+    line-height: 1.75;
+  }
+
+  .about-section {
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .about-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  .about-section strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  .divider {
+    height: 2px;
+    background: var(--border);
+  }
+
+  .interest-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .interest-list li {
+    font-size: 15px;
+    color: var(--text2);
+    line-height: 1.65;
+    padding-left: 4px;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .wtc-tip {
+    border-bottom: 2px dashed var(--accent);
+    cursor: help;
+  }
+
+  .contact-block {
+    margin-top: 40px;
+    padding: 40px;
+    border: 2px solid var(--border);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  .contact-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .page-wrap { padding: 100px 0 80px; }
+    .contact-block { padding: 24px; }
+  }
+</style>

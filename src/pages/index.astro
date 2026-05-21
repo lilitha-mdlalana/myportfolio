@@ -4,32 +4,135 @@ import Base from '@/layouts/Base.astro'
 ---
 
 <Base meta={{ title: config.title }}>
-  <section class="pt-16 pb-12">
-    <h1
-      class="font-heading text-4xl leading-tight tracking-wide uppercase md:text-5xl"
-    >
-      Hey, I’m Lilitha 👋
+  <section class="hero">
+    <h1>
+      LILITHA<br />
+      <span class="outline">MDL</span><span class="accent-word">ALANA</span>
     </h1>
-
-    <p class="w500:text-sm mt-6 max-w-xl text-base tracking-wide md:text-lg">
-      I’m a software engineer who documents what I’m learning and builds things
-      just for the joy of it. This site is my digital journal — a place to share
-      ideas around code, design, and creativity.
+    <p class="hero-desc">
+      Software engineer who builds things for the joy of it. I care about
+      component architecture, clean code, and developer experience — and I
+      document what I learn along the way.
     </p>
-
-    <div class="mt-8 flex gap-4 text-sm font-bold uppercase">
-      <a
-        href="/blog"
-        class="border-2 border-black px-4 py-2 shadow-[4px_4px_0_0_#000] transition-transform duration-150 ease-in-out hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#000]"
-      >
-        Read Blog
-      </a>
-      <a
-        href="/labs"
-        class="border-2 border-black px-4 py-2 shadow-[4px_4px_0_0_#000] transition-transform duration-150 ease-in-out hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#000]"
-      >
-        View Labs
-      </a>
+    <div class="hero-actions">
+      <a href="mailto:innomdlalana@gmail.com" class="btn btn-primary">✉ Email Me</a>
+      <a href="https://github.com/lilitha-mdlalana" target="_blank" class="btn btn-secondary">↗ GitHub</a>
+      <a href="/blog" class="btn btn-secondary">✍ Blog</a>
+    </div>
+    <div class="hero-meta">
+      <div class="meta-chip">
+        <span class="dot dot-green"></span>
+        Cape Town, Western Cape
+      </div>
+      <div class="meta-chip">
+        <span class="dot dot-blue"></span>
+        Software Engineer @ Mukuru
+      </div>
+      <div class="meta-chip">
+        <span class="dot dot-orange"></span>
+        React · TypeScript · Next.js
+      </div>
     </div>
   </section>
 </Base>
+
+<style>
+  .hero {
+    padding: 160px 32px 100px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-eyebrow::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 40px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-size: clamp(48px, 7vw, 96px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 32px;
+    color: var(--text);
+  }
+
+  .outline {
+    -webkit-text-stroke: 2px var(--text);
+    color: transparent;
+    transition: color 0.3s ease, -webkit-text-stroke 0.3s ease;
+  }
+
+  .accent-word { color: var(--accent); }
+
+  .hero-desc {
+    font-size: 18px;
+    color: var(--text2);
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: 40px;
+    font-weight: 400;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .meta-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 2px solid var(--border);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.12s ease;
+  }
+
+  .meta-chip:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow);
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-green { background: var(--accent3); }
+  .dot-blue { background: var(--accent2); }
+  .dot-orange { background: var(--accent); }
+
+  @media (max-width: 768px) {
+    .hero { padding: 140px 20px 80px; }
+  }
+</style>

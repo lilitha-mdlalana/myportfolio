@@ -28,20 +28,69 @@ const { tag } = Astro.params
 const { posts } = Astro.props
 ---
 
-<Base meta={{ title: 'Posts tagged with ' + tag }}>
-  <h2 class="font-heading w500:text-lg mb-10 text-2xl tracking-wide">
-    Posts tagged with <span class="text-foreground">#{tag}</span>
-  </h2>
-  <div class="w700:grid-cols-1 grid grid-cols-2 gap-5">
-    {
-      posts.map((post: Post) => (
-        <PostPreview
-          url={'/' + post.slug}
-          title={post.data.title}
-          description={post.data.description}
-          pubDate={post.data.pubDate}
-        />
-      ))
-    }
+<Base meta={{ title: `#${tag} — Lilitha Mdlalana` }}>
+  <div class="page-wrap">
+    <div class="section-inner">
+      <div class="page-header fade-in">
+        <span class="section-label">Tag</span>
+        <h1 class="page-title">#{tag}</h1>
+      </div>
+      <div class="posts-grid">
+        {
+          posts.map((post: Post) => (
+            <PostPreview
+              url={'/' + post.slug}
+              title={post.data.title}
+              description={post.data.description}
+              pubDate={post.data.pubDate}
+            />
+          ))
+        }
+      </div>
+    </div>
   </div>
 </Base>
+
+<style>
+  .page-wrap { padding: 120px 0 100px; }
+
+  .page-header {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 48px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 20px;
+  }
+
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    padding: 4px 10px;
+    box-shadow: 2px 2px 0 var(--accent);
+    white-space: nowrap;
+  }
+
+  .page-title {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text);
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0;
+  }
+
+  @media (max-width: 768px) {
+    .page-wrap { padding: 100px 0 80px; }
+    .posts-grid { grid-template-columns: 1fr; }
+  }
+</style>

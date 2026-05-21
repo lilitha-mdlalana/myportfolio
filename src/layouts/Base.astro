@@ -7,9 +7,6 @@ import BaseHead from '@/components/BaseHead.astro'
 import Nav from '@/components/Nav.astro'
 import Footer from '@/components/Footer.astro'
 
-import '@fontsource/inter/600.css'
-import '@fontsource/inter/400.css'
-
 const {
   meta: { title, description = config.description },
 } = Astro.props
@@ -17,15 +14,14 @@ const {
 
 <html lang={config.lang}>
   <head>
-    <!-- CRITICAL: This must be the very first script to prevent theme flash -->
+    <!-- CRITICAL: Must be first to prevent theme flash -->
     <script is:inline define:vars={{ config }}>
-      (function() {
+      (function () {
         try {
           const theme = localStorage.getItem('theme')
           const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
           const shouldBeDark = theme === 'dark' || (!theme && prefersDark)
-          
-          // Apply to html element for your CSS custom variant
+
           if (shouldBeDark) {
             document.documentElement.classList.add('dark')
             document.documentElement.setAttribute('data-theme', config.themes.dark)
@@ -33,11 +29,9 @@ const {
             document.documentElement.classList.remove('dark')
             document.documentElement.setAttribute('data-theme', config.themes.light)
           }
-          
-          // Also set a data attribute to prevent any flash
+
           document.documentElement.setAttribute('data-theme-ready', 'true')
         } catch (e) {
-          // Fallback if localStorage is not available
           if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.documentElement.classList.add('dark')
             document.documentElement.setAttribute('data-theme', config.themes.dark)
@@ -48,16 +42,23 @@ const {
         }
       })()
     </script>
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
     <BaseHead title={title} description={description} />
   </head>
-  <body
-    class="bg-background font-base text-foreground scrollbar scrollbar-thumb-black dark:scrollbar-thumb-white mx-auto max-w-[900px] px-5"
-  >
+  <body>
+    <div class="scroll-bar" id="scrollBar"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
     <Nav />
-    <main
-      class="w500:min-h-[calc(100dvh-70px)] w400:pt-[140px] min-h-[calc(100dvh-70px)] py-10 pt-[120px]"
-    >
+    <main>
       <slot />
     </main>
     <Footer />
@@ -69,7 +70,7 @@ const {
         try {
           const theme = localStorage.getItem('theme')
           const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-          
+
           if (theme === 'dark' || (!theme && prefersDark)) {
             document.documentElement.classList.add('dark')
             document.documentElement.setAttribute('data-theme', config.themes.dark as string)
@@ -78,7 +79,6 @@ const {
             document.documentElement.setAttribute('data-theme', config.themes.light as string)
           }
         } catch (e) {
-          // Fallback
           if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.documentElement.classList.add('dark')
             document.documentElement.setAttribute('data-theme', config.themes.dark as string)
@@ -86,29 +86,86 @@ const {
         }
       }
 
-      // Apply theme after navigation
       document.addEventListener('astro:after-swap', applyTheme)
+    </script>
 
-      // View transitions
-      if (document.startViewTransition) {
-        document.querySelectorAll('a[href]').forEach((link) => {
-          const anchor = link as HTMLAnchorElement
-          const url = anchor.href
+    <script is:inline>
+      // SCROLL PROGRESS
+      window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY
+        const total = document.documentElement.scrollHeight - window.innerHeight
+        const bar = document.getElementById('scrollBar')
+        if (bar) bar.style.width = (scrolled / total * 100) + '%'
+      }, { passive: true })
 
-          anchor.addEventListener('click', (e) => {
-            if (
-              url &&
-              url !== window.location.href &&
-              anchor.origin === window.location.origin
-            ) {
-              e.preventDefault()
-              document.startViewTransition(() => {
-                window.location.href = url
-              })
-            }
+      // CUSTOM CURSOR
+      const ring = document.getElementById('cursorRing')
+      const dot = document.getElementById('cursorDot')
+
+      let mouseX = 0, mouseY = 0
+      let ringX = 0, ringY = 0
+
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX
+        mouseY = e.clientY
+        if (dot) {
+          dot.style.left = mouseX + 'px'
+          dot.style.top = mouseY + 'px'
+        }
+      })
+
+      function animateRing() {
+        ringX += (mouseX - ringX) * 0.15
+        ringY += (mouseY - ringY) * 0.15
+        if (ring) {
+          ring.style.left = ringX + 'px'
+          ring.style.top = ringY + 'px'
+        }
+        requestAnimationFrame(animateRing)
+      }
+      animateRing()
+
+      document.addEventListener('mousedown', () => {
+        ring?.classList.add('clicking')
+        dot?.classList.add('clicking')
+      })
+      document.addEventListener('mouseup', () => {
+        ring?.classList.remove('clicking')
+        dot?.classList.remove('clicking')
+      })
+
+      function setupHoverables() {
+        document.querySelectorAll('a, button, [role="button"]').forEach((el) => {
+          el.addEventListener('mouseenter', () => {
+            ring?.classList.add('hovering')
+            dot?.classList.add('hovering')
+          })
+          el.addEventListener('mouseleave', () => {
+            ring?.classList.remove('hovering')
+            dot?.classList.remove('hovering')
           })
         })
       }
+      setupHoverables()
+      document.addEventListener('astro:after-swap', setupHoverables)
+
+      // FADE IN ON SCROLL
+      function setupFadeIn() {
+        const fadeEls = document.querySelectorAll('.fade-in')
+        const fadeObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.classList.add('visible')
+              }, i * 80)
+              fadeObserver.unobserve(entry.target)
+            }
+          })
+        }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' })
+        fadeEls.forEach((el) => fadeObserver.observe(el))
+      }
+      setupFadeIn()
+      document.addEventListener('astro:after-swap', setupFadeIn)
     </script>
   </body>
 </html>
