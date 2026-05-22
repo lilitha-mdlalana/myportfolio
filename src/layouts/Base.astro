@@ -8,7 +8,7 @@ import Nav from '@/components/Nav.astro'
 import Footer from '@/components/Footer.astro'
 
 const {
-  meta: { title, description = config.description },
+  meta: { title, description = config.description, image },
 } = Astro.props
 ---
 
@@ -50,7 +50,7 @@ const {
       rel="stylesheet"
     />
 
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} image={image} />
   </head>
   <body>
     <div class="scroll-bar" id="scrollBar"></div>

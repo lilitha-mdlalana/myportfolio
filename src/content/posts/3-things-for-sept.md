@@ -1,7 +1,7 @@
 ---
 title: '3 Things I Learnt This Month'
 description: 'Summary of my learnings during September'
-pubDate: 'Sept 24 2025'
+pubDate: '2025-09-24'
 tags: ['astro', 'blogging', 'learning']
 ---
 

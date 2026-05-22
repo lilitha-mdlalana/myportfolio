@@ -1,9 +1,35 @@
 ---
 import config from '@/config'
 import Base from '@/layouts/Base.astro'
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Lilitha Mdlalana',
+  pronouns: 'he/him',
+  url: 'https://lilitha-mdlalana.is-a.dev',
+  jobTitle: 'Software Engineer',
+  worksFor: { '@type': 'Organization', name: 'Mukuru' },
+  address: { '@type': 'PostalAddress', addressLocality: 'Cape Town', addressRegion: 'Western Cape', addressCountry: 'ZA' },
+  sameAs: [
+    'https://github.com/lilitha-mdlalana',
+    'https://linkedin.com/in/lilitha-mdlalana',
+  ],
+  knowsAbout: ['React', 'TypeScript', 'Next.js', 'JavaScript', 'Frontend Development'],
+}
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Lilitha Mdlalana',
+  url: 'https://lilitha-mdlalana.is-a.dev',
+  author: { '@type': 'Person', name: 'Lilitha Mdlalana' },
+}
 ---
 
 <Base meta={{ title: config.title }}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <section class="hero">
     <h1>
       LILITHA<br />
@@ -16,7 +42,7 @@ import Base from '@/layouts/Base.astro'
     </p>
     <div class="hero-actions">
       <a href="mailto:innomdlalana@gmail.com" class="btn btn-primary">✉ Email Me</a>
-      <a href="https://github.com/lilitha-mdlalana" target="_blank" class="btn btn-secondary">↗ GitHub</a>
+      <a href="https://github.com/lilitha-mdlalana" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">↗ GitHub</a>
       <a href="/blog" class="btn btn-secondary">✍ Blog</a>
     </div>
     <div class="hero-meta">

@@ -3,9 +3,37 @@ import Base from '@/layouts/Base.astro'
 import PostInfo from '@/components/PostInfo.astro'
 
 const { frontmatter } = Astro.props
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+
+const blogPostingSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: frontmatter.title,
+  description: frontmatter.description,
+  datePublished: frontmatter.pubDate instanceof Date
+    ? frontmatter.pubDate.toISOString()
+    : frontmatter.pubDate,
+  ...(frontmatter.updatedDate && {
+    dateModified: frontmatter.updatedDate instanceof Date
+      ? frontmatter.updatedDate.toISOString()
+      : frontmatter.updatedDate,
+  }),
+  url: canonicalURL.toString(),
+  author: {
+    '@type': 'Person',
+    name: 'Lilitha Mdlalana',
+    url: 'https://lilitha-mdlalana.is-a.dev',
+  },
+  publisher: {
+    '@type': 'Person',
+    name: 'Lilitha Mdlalana',
+    url: 'https://lilitha-mdlalana.is-a.dev',
+  },
+}
 ---
 
 <Base meta={{ title: frontmatter.title }}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(blogPostingSchema)} />
   <div class="blog-wrap">
     <div
       id="markdown"

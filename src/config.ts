@@ -13,8 +13,8 @@ type Config = {
 
 export default {
   author: 'Lilitha Mdlalana',
-  title: 'Fragments of Thought',
-  description: 'A digital notebook on code, creativity, and becoming.',
+  title: 'Lilitha Mdlalana — Software Engineer',
+  description: 'Software Engineer specialising in React and TypeScript. Writing about frontend development, architecture, and learning in public.',
   lang: 'en',
   themes: {
     dark: 'github-dark',

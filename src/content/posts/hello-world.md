@@ -1,7 +1,7 @@
 ---
 title: '👋 Hello World!'
 description: 'A quick hello and intro to the Labs.'
-pubDate: 'Aug 01 2025'
+pubDate: '2025-08-01'
 tags: ['astro', 'blogging', 'learning']
 ---
 

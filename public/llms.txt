@@ -1,0 +1,29 @@
+# Lilitha Mdlalana — Software Engineer
+
+> Personal portfolio and blog at https://lilitha-mdlalana.is-a.dev
+> Pronouns: he/him
+
+## About
+
+Lilitha Mdlalana (he/him) is a Software Engineer at Mukuru, based in Cape Town, Western Cape, South Africa. He specialises in frontend development with React, TypeScript, and Next.js. He started coding in 2019 and trained at WeThinkCode_.
+
+## Blog
+
+Writing about frontend development, JavaScript/TypeScript, React, and learning in public.
+
+- /blog — all posts
+- /tags — posts by tag
+
+## Labs
+
+Experiments and side projects at /labs — Canvas API, Flutter apps, multiplayer Java games, and more.
+
+## Skills
+
+JavaScript, TypeScript, React, Next.js, Chakra UI, Flutter, Dart, Java, Python, SQL, Firebase, Docker, Astro
+
+## Contact
+
+- Email: innomdlalana@gmail.com
+- GitHub: https://github.com/lilitha-mdlalana
+- LinkedIn: https://linkedin.com/in/lilitha-mdlalana

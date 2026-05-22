@@ -1,7 +1,7 @@
 ---
 title: 'Axios paramsSerializer for Arrays'
 description: 'A summary of my fight with Axios'
-pubDate: '13 May 2026'
+pubDate: '2026-05-13'
 tags: ['axios', 'javascript', 'learning']
 ---
 

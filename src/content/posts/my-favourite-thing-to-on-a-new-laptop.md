@@ -1,7 +1,7 @@
 ---
 title: 'My favorite thing to do on a new laptop'
 description: 'The git alias and small quality-of-life tweaks that save me time every single day'
-pubDate: '21 May 2026'
+pubDate: '2026-05-21'
 tags: ['tech', 'git', 'learning']
 ---
 
