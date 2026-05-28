@@ -5,7 +5,7 @@ export const labs = [
       'A vibrant animated flower scene built with pure HTML and CSS. Exploring nature-inspired visuals and micro-interactions.',
     href: 'https://floral-symphony.netlify.app/',
     tags: ['css', 'animation', 'html'],
-    builtWith: ['HTML', 'CSS'],
+    builtWith: ['HTML', 'CSS', 'JavaScript'],
   },
   {
     title: 'Canvas Painting App',
@@ -13,7 +13,7 @@ export const labs = [
       'A simple drawing app built with the Canvas API to explore event handling and rendering.',
     href: 'https://canvaspainterapp.netlify.app/',
     tags: ['javascript', 'canvas'],
-    builtWith: ['HTML Canvas', 'JavaScript', 'Vanilla CSS'],
+    builtWith: ['HTML Canvas', 'JavaScript', 'CSS'],
   },
   {
     title: 'Typeflow',
@@ -22,6 +22,21 @@ export const labs = [
     href: 'https://typflow.netlify.app/',
     tags: ['Next.js', 'TypeScript', 'writing'],
     builtWith: ['Next.js', 'TypeScript'],
+  },
+  {
+    title: 'Vinylify',
+    description: "Spotify-connected vinyl turntable player. Stream your music through a visual record deck with album-art-driven dynamic backgrounds, built on Next.js and the Spotify Web Playback SDK.",
+    href: 'https://vinylify-beta.netlify.app',
+    tags: ['Next.js', 'Spotify SDK', 'music'],
+    builtWith: ['Next.js', 'Spotify SDK', 'TailwindCSS'],
+  },
+  {
+    title: 'Kimchi Storefront',
+    description:
+      'Marketplace for independent sellers to list and sell their products.',
+    href: 'https://kimchi-beta.netlify.app/',
+    tags: ['Next.js', 'TypeScript'],
+    builtWith: ['Next.js', 'Spring Boot', 'Java'],
   },
   {
     title: 'Portfolio Website',
@@ -55,5 +70,4 @@ export const labs = [
     tags: ['java', 'multiplayer', 'game'],
     builtWith: ['Java', 'Sockets', 'Threads', 'SQL', 'Docker', 'Hibernate'],
   },
-  
 ];
