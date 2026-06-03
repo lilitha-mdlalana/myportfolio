@@ -33,11 +33,11 @@ Once `renderDashboard()` finishes, it gets popped off the stack and execution go
 
 Think of it like a stack of plates: the last plate added is always the first one to come off. That's why it's called a call **stack**.
 
-```markdown
-Fun fact:
+
+> Fun fact:
 A "stack overflow" means you recursed so deeply the stack ran out of allocated memory.
-```
+
 
 **Note**: While JavaScript is executing on the call stack, the browser cannot run other JavaScript. User events, timers, and other callbacks must wait until the stack is empty before they can be processed.
 
-Logging off...
+c
