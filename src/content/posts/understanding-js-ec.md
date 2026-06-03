@@ -5,7 +5,7 @@ pubDate: '2026-05-28'
 tags: ['javascript', 'learning']
 ---
 
-Welcome to my mini-series - a series I'll call "Understanding JavaScript" (though can we really understand JS  👀).  These are meant to serve as a reference and also explaining my understanding of things I learn as I try to explore the JavaScript language deeper.
+Welcome to my mini-series - a series I'll call "Understanding JavaScript" (though can we really understand JS  👀).  These are meant to serve as a reference and also explaining my understanding of things I learn as I try to explore the JavaScript language on a deeper level.
 
 We start off with the execution context -  the "room" where the code runs.
 
