@@ -21,7 +21,7 @@ console.log(a) // 10
 console.log(b) // 20
 ```
 
-The stack works like a **LIFO structure (last in, first out)** — the same idea as the call stack.
+The stack works like a **LIFO structure (last in, first out)**, the same idea as the call stack.
 
 ### Heap: dynamic, unordered, long-lived
 
@@ -39,7 +39,7 @@ console.log(obj2.limit) // 20
 
 Both variables point to the same object in memory.
 
-So you're not copying the object — you're copying the reference.
+So you're not copying the object; you're copying the reference.
 
 ### Why this matters: reference equality
 

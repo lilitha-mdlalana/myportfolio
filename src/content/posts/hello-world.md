@@ -6,11 +6,11 @@ tags: ['astro', 'blogging', 'learning']
 ---
 
 
-Welcome to my little corner of the internet — a space I'm calling **Labs**.
+Welcome to my little corner of the internet, a space I'm calling **Labs**.
 
 Instead of polished “projects,” I’m focusing on experiments, learning moments, and ideas in motion. Whether it’s drawing with the Canvas API, building multiplayer worlds with Java, or syncing fitness goals with Flutter, these are hands-on explorations.
 
-Some things will break. Others might work surprisingly well. Either way — I’m here to build, tinker, and share what I learn along the way.
+Some things will break. Others might work surprisingly well. Either way, I’m here to build, tinker, and share what I learn along the way.
 
 ---
 

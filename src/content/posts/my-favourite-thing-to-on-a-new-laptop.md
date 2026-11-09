@@ -30,7 +30,7 @@ Now I can simply run:
     git newbranch feature/auth-page
 ```
 
-…and immediately start working from a fresh, up-to-date branch without thinking about the setup steps. It removes friction, reduces mistakes, and makes starting new work feel instant — which is exactly the kind of developer experience I love optimizing for.
+…and immediately start working from a fresh, up-to-date branch without thinking about the setup steps. It removes friction, reduces mistakes, and makes starting new work feel instant, which is exactly the kind of developer experience I love optimizing for.
 
 ### Others I can't live without:
 

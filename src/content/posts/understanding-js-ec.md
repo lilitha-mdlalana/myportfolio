@@ -20,4 +20,4 @@ The JS engine has two phases for every context before running a single line:
 ### Execution Phase:
 Code runs line by line and runs/'executes' each line - also known as the **thread of execution**.
 
-This is why `console.log(x)` before `var x = 5` gives undefined and not an error — `x` was created in the creation phase, just not assigned yet.
+This is why `console.log(x)` before `var x = 5` gives undefined and not an error: `x` was created in the creation phase, just not assigned yet.

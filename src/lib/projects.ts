@@ -63,6 +63,22 @@ export const labs = [
     builtWith: ['Flutter', 'Firebase', 'SQLite', 'FlutterMap'],
   },
   {
+    title: 'Corporate Mario',
+    description:
+      'An office-themed side-scrolling platformer. Sprint past burnout, collect coffee for double jumps, and race to the Friday deployment portal.',
+    href: 'https://corporate-mario.lilitha.dev/',
+    tags: ['javascript', 'game'],
+    builtWith: ['HTML', 'CSS', 'JavaScript'],
+  },
+  {
+    title: 'ChordSense',
+    description:
+      'A free, open-source guitar-practice app that teaches one new chord each morning, with theory, voicings, and progressions.',
+    href: 'https://chordsense.lilitha.dev/',
+    tags: ['flutter', 'music'],
+    builtWith: ['Flutter'],
+  },
+  {
     title: 'Robot Worlds',
     description:
       'Multiplayer robot simulation game powered by Java sockets, threads, and SQL. Explore, battle, and persist world states with Docker and Hibernate.',
